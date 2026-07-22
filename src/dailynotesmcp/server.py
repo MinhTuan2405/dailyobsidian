@@ -9,7 +9,7 @@ from starlette.responses import JSONResponse
 mcp = FastMCP(
     "Daily Notes MCP",
     instructions=(
-        "Use check_daily_notes_mcp to verify that this MCP server is available."
+        "Use say_hello_mcp_world when the user asks to say hello to the MCP world."
     ),
 )
 
@@ -24,12 +24,12 @@ def hello_mcp_world() -> str:
 
 
 @mcp.tool(
-    title="Check Daily Notes MCP",
-    description="Verify that the Daily Notes MCP server is available and responding.",
+    title="Say Hello MCP World",
+    description="Say hello to the MCP world when the user explicitly requests it.",
 )
-def check_daily_notes_mcp() -> str:
-    """Return a deterministic response for MCP client connection checks."""
-    return "Daily Notes MCP is working. Hello, MCP World!"
+def say_hello_mcp_world() -> str:
+    """Return the greeting exposed to tool-only MCP clients such as Codex."""
+    return "Hello, MCP World!"
 
 
 @mcp.custom_route("/health", methods=["GET"])
