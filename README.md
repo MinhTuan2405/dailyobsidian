@@ -1,6 +1,6 @@
 # Daily Notes MCP
 
-A maintainable [FastMCP](https://gofastmcp.com/) server for daily notes. It currently exposes one MCP prompt, `hello_mcp_world`, which instructs an agent to say:
+A maintainable [FastMCP](https://gofastmcp.com/) server for daily notes. It currently exposes one MCP prompt, `hello_mcp_world`, and one read-only connection-check tool, `check_daily_notes_mcp`.
 
 > Hello, MCP World!
 
@@ -26,6 +26,8 @@ uv run dailynotesmcp
 ```
 
 Connect an MCP client to `http://localhost:8000/mcp`. Check the local process with `http://localhost:8000/health`.
+
+Codex surfaces MCP tools rather than MCP prompts. Ask it to use `check_daily_notes_mcp` to verify this server after connecting it.
 
 For a local STDIO client configuration:
 

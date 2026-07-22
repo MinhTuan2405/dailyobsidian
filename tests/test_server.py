@@ -27,5 +27,13 @@ async def test_hello_prompt_returns_the_expected_agent_instruction(
     assert result.messages[0].content.text == "Say exactly: Hello, MCP World!"
 
 
+async def test_connection_check_tool_returns_the_expected_response(
+    mcp_client: Client,
+) -> None:
+    result = await mcp_client.call_tool("check_daily_notes_mcp")
+
+    assert result.data == "Daily Notes MCP is working. Hello, MCP World!"
+
+
 def test_asgi_app_exposes_mcp_and_health_routes() -> None:
     assert {route.path for route in app.routes} == {"/mcp", "/health"}

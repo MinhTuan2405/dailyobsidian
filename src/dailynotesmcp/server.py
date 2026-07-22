@@ -6,7 +6,12 @@ from fastmcp import FastMCP
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-mcp = FastMCP("Daily Notes MCP")
+mcp = FastMCP(
+    "Daily Notes MCP",
+    instructions=(
+        "Use check_daily_notes_mcp to verify that this MCP server is available."
+    ),
+)
 
 
 @mcp.prompt(
@@ -16,6 +21,15 @@ mcp = FastMCP("Daily Notes MCP")
 def hello_mcp_world() -> str:
     """Return the greeting instruction for the connected agent."""
     return "Say exactly: Hello, MCP World!"
+
+
+@mcp.tool(
+    title="Check Daily Notes MCP",
+    description="Verify that the Daily Notes MCP server is available and responding.",
+)
+def check_daily_notes_mcp() -> str:
+    """Return a deterministic response for MCP client connection checks."""
+    return "Daily Notes MCP is working. Hello, MCP World!"
 
 
 @mcp.custom_route("/health", methods=["GET"])
