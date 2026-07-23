@@ -1,0 +1,13 @@
+{
+  "name": "daily-notes-mcp",
+  "displayName": "Daily Notes MCP",
+  "version": "0.1.0",
+  "description": "Connect Claude Code to the Daily Notes MCP server.",
+  "author": {
+    "name": "MinhTuan2405",
+    "url": "https://github.com/MinhTuan2405"
+  },
+  "repository": "https://github.com/MinhTuan2405/obsidianmcp",
+  "keywords": ["mcp", "daily-notes", "obsidian"],
+  "mcpServers": "./.mcp.json"
+}

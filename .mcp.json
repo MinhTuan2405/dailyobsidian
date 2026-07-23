@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "daily-notes": {
+      "type": "http",
+      "url": "https://dailynotesmcp.vercel.app/mcp"
+    }
+  }
+}

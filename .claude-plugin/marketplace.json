@@ -1,0 +1,14 @@
+{
+  "name": "daily-notes-mcp-marketplace",
+  "owner": {
+    "name": "MinhTuan2405"
+  },
+  "description": "Daily Notes MCP plugins for Claude Code.",
+  "plugins": [
+    {
+      "name": "daily-notes-mcp",
+      "source": "./",
+      "description": "Connect Claude Code to the Daily Notes MCP server."
+    }
+  ]
+}

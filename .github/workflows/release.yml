@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --all-groups --locked
+      - run: test "${GITHUB_REF_NAME}" = "v$(uv run python -c 'from importlib.metadata import version; print(version("dailynotesmcp"))')"
+      - run: uv run ruff check .
+      - run: uv run pytest
+      - run: uv build
+      - run: gh release create "${GITHUB_REF_NAME}" dist/* --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

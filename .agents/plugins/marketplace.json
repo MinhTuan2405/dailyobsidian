@@ -1,0 +1,20 @@
+{
+  "name": "daily-notes-mcp-marketplace",
+  "interface": {
+    "displayName": "Daily Notes MCP"
+  },
+  "plugins": [
+    {
+      "name": "daily-notes-mcp",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

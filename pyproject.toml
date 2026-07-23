@@ -10,6 +10,7 @@ dependencies = [
 
 [project.scripts]
 dailynotesmcp = "dailynotesmcp.server:main"
+dailynotesmcp-stdio = "dailynotesmcp.server:stdio_main"
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

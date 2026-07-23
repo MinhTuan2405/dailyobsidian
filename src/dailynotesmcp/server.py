@@ -72,5 +72,10 @@ def main() -> None:
     )
 
 
+def stdio_main() -> None:
+    """Run the server over STDIO for local MCP clients."""
+    mcp.run(transport="stdio")
+
+
 if __name__ == "__main__":
     main()
