@@ -1,0 +1,30 @@
+{
+  "name": "obsidian-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first Obsidian MCP server, app, skills, and companion plugin.",
+  "type": "module",
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "test": "pnpm build && pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "verify": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "verify:release": "node scripts/verify-release.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.1.0",
+    "eslint": "^9.32.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4"
+  }
+}

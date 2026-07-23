@@ -1,0 +1,29 @@
+{
+  "name": "@obsidian-workbench/obsidian-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "build": "node esbuild.config.mjs production",
+    "dev": "node esbuild.config.mjs development",
+    "pretest": "pnpm --filter @obsidian-workbench/shared build",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "@obsidian-workbench/shared": "workspace:*",
+    "diff": "^8.0.2",
+    "yaml": "^2.8.0",
+    "zod": "^4.0.10"
+  },
+  "devDependencies": {
+    "@obsidian-workbench/vault-core": "workspace:*",
+    "@types/node": "^24.1.0",
+    "esbuild": "^0.25.8",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

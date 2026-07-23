@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "status": "placeholder",
+  "assets": [
+    {
+      "id": "icon",
+      "path": "assets/icon.png",
+      "status": "placeholder",
+      "format": "PNG",
+      "width": 128,
+      "height": 128,
+      "maxBytes": 204800
+    },
+    {
+      "id": "logo",
+      "path": "assets/logo.png",
+      "status": "placeholder",
+      "format": "PNG",
+      "width": 1200,
+      "height": 300,
+      "maxBytes": 512000
+    },
+    {
+      "id": "vault-selector",
+      "path": "assets/screenshots/vault-selector.png",
+      "status": "placeholder",
+      "format": "PNG",
+      "width": 1600,
+      "height": 1000,
+      "maxBytes": 1536000
+    },
+    {
+      "id": "diff-confirmation",
+      "path": "assets/screenshots/diff-confirmation.png",
+      "status": "placeholder",
+      "format": "PNG",
+      "width": 1600,
+      "height": 1000,
+      "maxBytes": 1536000
+    },
+    {
+      "id": "mobile-companion",
+      "path": "assets/screenshots/mobile-companion.png",
+      "status": "placeholder",
+      "format": "PNG",
+      "width": 900,
+      "height": 1600,
+      "maxBytes": 1536000
+    }
+  ]
+}

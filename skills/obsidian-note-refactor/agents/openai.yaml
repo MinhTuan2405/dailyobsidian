@@ -1,0 +1,8 @@
+interface:
+  display_name: "Obsidian Note Refactor"
+  short_description: "Safely rename, split, merge, move, or rewrite notes"
+  default_prompt: >-
+    Use $obsidian-note-refactor only for the explicitly selected structural
+    change, enforcing read, plan, dry-run, diff, confirm, execute, and verify.
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,14 @@
+{
+  "$comment": "Read-only local example. Run pnpm build first and start the MCP process from the repository root. Put machine-specific absolute paths only in untracked user config.",
+  "mcpServers": {
+    "obsidian-workbench": {
+      "command": "node",
+      "args": ["packages/mcp-server/dist/main.js"],
+      "env": {
+        "OBSIDIAN_VAULT_PATH": "./path/to/test-vault",
+        "OBSIDIAN_VAULT_ID": "workbench-test",
+        "OBSIDIAN_VAULT_NAME": "Workbench Test Vault"
+      }
+    }
+  }
+}

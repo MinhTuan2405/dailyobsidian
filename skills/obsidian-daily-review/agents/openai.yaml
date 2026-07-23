@@ -1,0 +1,8 @@
+interface:
+  display_name: "Obsidian Daily Review"
+  short_description: "Review recent notes, tasks, blockers, and follow-ups"
+  default_prompt: >-
+    Use $obsidian-daily-review to prepare a bounded review. Never append or
+    change tasks unless the user explicitly requests the exact write.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,16 @@
+{
+  "$comment": "Repository release/deployment descriptor, not a portable MCP client standard. Runtime registration in packages/mcp-server/src/app/workbench-app.ts is authoritative.",
+  "schemaVersion": 1,
+  "name": "Obsidian Workbench",
+  "version": "0.1.0",
+  "resource": {
+    "uri": "ui://obsidian-workbench/index.html",
+    "htmlPath": "packages/mcp-app/dist/index.html",
+    "csp": {
+      "connectDomains": [],
+      "resourceDomains": []
+    }
+  },
+  "entryTool": "obsidian.list_vaults",
+  "localServerConfig": "config/mcp.local.example.json"
+}

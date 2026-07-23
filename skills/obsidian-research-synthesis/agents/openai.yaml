@@ -1,0 +1,8 @@
+interface:
+  display_name: "Obsidian Research Synthesis"
+  short_description: "Synthesize vault evidence with real wikilink citations"
+  default_prompt: >-
+    Use $obsidian-research-synthesis to answer from relevant vault notes with
+    real citations. Do not create or modify a note unless explicitly requested.
+policy:
+  allow_implicit_invocation: true

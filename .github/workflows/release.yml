@@ -12,12 +12,59 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: astral-sh/setup-uv@v7
-      - run: uv sync --all-groups --locked
-      - run: test "${GITHUB_REF_NAME}" = "v$(uv run python -c 'from importlib.metadata import version; print(version("dailynotesmcp"))')"
-      - run: uv run ruff check .
-      - run: uv run pytest
-      - run: uv build
-      - run: gh release create "${GITHUB_REF_NAME}" dist/* --generate-notes
+
+      - name: Set up Python build
+        uses: astral-sh/setup-uv@v7
+      - name: Install locked Python dependencies
+        run: uv sync --all-groups --locked
+      - name: Verify tag matches Python prototype
+        run: test "${GITHUB_REF_NAME}" = "v$(uv run python -c 'from importlib.metadata import version; print(version("dailynotesmcp"))')"
+      - name: Lint Python prototype
+        run: uv run ruff check .
+      - name: Test Python prototype
+        run: uv run pytest
+      - name: Build Python distributions
+        run: uv build
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.2
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install locked TypeScript dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Verify tag matches Obsidian Workbench
+        run: test "${GITHUB_REF_NAME}" = "v$(node -p "require('./package.json').version")"
+      - name: Lint TypeScript workspace
+        run: pnpm lint
+      - name: Typecheck TypeScript workspace
+        run: pnpm typecheck
+      - name: Test and build TypeScript workspace
+        run: pnpm test
+      - name: Verify release metadata
+        run: pnpm verify:release
+
+      - name: Package TypeScript deployables
+        run: |
+          mkdir -p release-artifacts
+          zip -j "release-artifacts/obsidian-workbench-plugin-${GITHUB_REF_NAME}.zip" \
+            packages/obsidian-plugin/main.js \
+            packages/obsidian-plugin/manifest.json \
+            packages/obsidian-plugin/styles.css
+          tar -czf "release-artifacts/obsidian-workbench-mcp-app-${GITHUB_REF_NAME}.tar.gz" \
+            -C packages/mcp-app/dist index.html
+          tar -czf "release-artifacts/obsidian-workbench-typescript-builds-${GITHUB_REF_NAME}.tar.gz" \
+            packages/shared/dist packages/shared/package.json \
+            packages/vault-core/dist packages/vault-core/package.json \
+            packages/mcp-server/dist packages/mcp-server/package.json \
+            packages/remote-gateway/dist packages/remote-gateway/package.json
+          sha256sum dist/* release-artifacts/* > release-artifacts/SHA256SUMS.txt
+
+      - name: Create draft GitHub release
+        run: gh release create "${GITHUB_REF_NAME}" dist/* release-artifacts/* --draft --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}

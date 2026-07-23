@@ -6,3 +6,9 @@ __pycache__/
 .env
 .vercel/
 dist/
+node_modules/
+coverage/
+*.tsbuildinfo
+packages/*/dist/
+packages/mcp-app/.vite/
+packages/obsidian-plugin/main.js

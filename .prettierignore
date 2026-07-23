@@ -1,0 +1,8 @@
+.venv/
+coverage/
+dist/
+node_modules/
+uv.lock
+codex-obsidian-workbench-master-prompt.md
+packages/*/dist/
+packages/obsidian-plugin/main.js

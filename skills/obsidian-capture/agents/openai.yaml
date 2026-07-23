@@ -1,0 +1,8 @@
+interface:
+  display_name: "Obsidian Capture"
+  short_description: "Capture supplied content using vault conventions"
+  default_prompt: >-
+    Use $obsidian-capture to place the supplied content safely. Never write
+    merely because the skill was invoked; require an explicit capture request.
+policy:
+  allow_implicit_invocation: true

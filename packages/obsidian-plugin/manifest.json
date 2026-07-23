@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-workbench",
+  "name": "Obsidian Workbench Companion",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "A permission-scoped companion for authenticated Obsidian Workbench requests.",
+  "author": "Obsidian Workbench",
+  "isDesktopOnly": false
+}

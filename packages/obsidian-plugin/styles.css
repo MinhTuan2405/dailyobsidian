@@ -1,0 +1,48 @@
+.obsidian-workbench-settings .setting-item-description {
+  max-width: 52rem;
+}
+
+.obsidian-workbench-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.5rem 0 1rem;
+  color: var(--text-muted);
+}
+
+.obsidian-workbench-status::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-base-40);
+  content: "";
+}
+
+.obsidian-workbench-status[data-state="online"]::before {
+  background: var(--color-green);
+}
+
+.obsidian-workbench-status[data-state="error"]::before {
+  background: var(--color-red);
+}
+
+.obsidian-workbench-warning {
+  padding: 0.75rem 0.9rem;
+  border-inline-start: 3px solid var(--color-orange);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+}
+
+.obsidian-workbench-audit {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-ui-smaller);
+}
+
+.obsidian-workbench-audit th,
+.obsidian-workbench-audit td {
+  padding: 0.35rem 0.45rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+  text-align: start;
+  vertical-align: top;
+}

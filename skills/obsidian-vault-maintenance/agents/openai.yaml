@@ -1,0 +1,8 @@
+interface:
+  display_name: "Obsidian Vault Maintenance"
+  short_description: "Report vault-quality issues and preview selected fixes"
+  default_prompt: >-
+    Use $obsidian-vault-maintenance in report-only mode. Apply no fix until the
+    user explicitly selects exact issues and confirms every displayed diff.
+policy:
+  allow_implicit_invocation: false
