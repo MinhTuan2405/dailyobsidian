@@ -1,11 +1,11 @@
 {
-  "name": "daily-notes-mcp-marketplace",
+  "name": "daily-obsidian-marketplace",
   "interface": {
-    "displayName": "Daily Notes MCP"
+    "displayName": "Daily Obsidian"
   },
   "plugins": [
     {
-      "name": "daily-notes-mcp",
+      "name": "daily-obsidian",
       "source": {
         "source": "local",
         "path": "./"

@@ -1,18 +1,18 @@
 {
-  "name": "daily-notes-mcp",
+  "name": "daily-obsidian",
   "version": "0.1.0",
-  "description": "Connect Codex to the Daily Notes MCP server.",
+  "description": "Connect Codex to the Daily Obsidian MCP server.",
   "author": {
     "name": "MinhTuan2405",
     "url": "https://github.com/MinhTuan2405"
   },
-  "repository": "https://github.com/MinhTuan2405/obsidianmcp",
-  "keywords": ["mcp", "daily-notes", "obsidian"],
+  "repository": "https://github.com/MinhTuan2405/dailyobsidian",
+  "keywords": ["mcp", "daily-obsidian", "obsidian"],
   "mcpServers": "./.codex-mcp.json",
   "interface": {
-    "displayName": "Daily Notes MCP",
-    "shortDescription": "Daily Notes tools for Codex.",
-    "longDescription": "Connects Codex to Daily Notes MCP tools through the deployed server.",
+    "displayName": "Daily Obsidian",
+    "shortDescription": "Daily Obsidian tools for Codex.",
+    "longDescription": "Connects Codex to Daily Obsidian MCP tools through the deployed server.",
     "developerName": "MinhTuan2405",
     "category": "Productivity",
     "capabilities": ["Read"]

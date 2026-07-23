@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "daily-notes": {
+    "daily-obsidian": {
       "type": "http",
       "url": "https://dailynotesmcp.vercel.app/mcp"
     }

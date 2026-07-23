@@ -7,7 +7,7 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 
 mcp = FastMCP(
-    "Daily Notes MCP",
+    "Daily Obsidian",
     instructions=(
         "Use say_hello_mcp_world when the user asks to say hello to the MCP world."
     ),

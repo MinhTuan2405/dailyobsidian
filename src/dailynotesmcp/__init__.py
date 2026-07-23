@@ -1,4 +1,4 @@
-"""Daily Notes MCP server package."""
+"""Daily Obsidian MCP server package."""
 
 from dailynotesmcp.server import app, mcp
 

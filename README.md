@@ -1,6 +1,6 @@
-# Daily Notes MCP
+# Daily Obsidian
 
-A [FastMCP](https://gofastmcp.com/) server for daily notes. It currently exposes the `hello_mcp_world` prompt and the read-only `say_hello_mcp_world` tool.
+A [FastMCP](https://gofastmcp.com/) server and plugin marketplace for Daily Obsidian. It currently exposes the `hello_mcp_world` prompt and the read-only `say_hello_mcp_world` tool.
 
 The repository is a GitHub-installable plugin marketplace for both Codex and Claude Code. Installed plugins connect to the deployed Streamable HTTP server at `https://dailynotesmcp.vercel.app/mcp`.
 
@@ -11,27 +11,27 @@ The repository is a GitHub-installable plugin marketplace for both Codex and Cla
 Run these commands in Claude Code:
 
 ```text
-/plugin marketplace add MinhTuan2405/obsidianmcp
-/plugin install daily-notes-mcp@daily-notes-mcp-marketplace
+/plugin marketplace add MinhTuan2405/dailyobsidian
+/plugin install daily-obsidian@daily-obsidian-marketplace
 /reload-plugins
 ```
 
-Claude Code connects to the bundled remote `daily-notes` MCP server automatically. Its tools are available under the plugin MCP namespace.
+Claude Code connects to the bundled remote `daily-obsidian` MCP server automatically. Its tools are available under the plugin MCP namespace.
 
 ### Codex
 
 Add the GitHub marketplace from the Codex CLI:
 
 ```shell
-codex plugin marketplace add MinhTuan2405/obsidianmcp
+codex plugin marketplace add MinhTuan2405/dailyobsidian
 ```
 
-In the ChatGPT desktop app, open **Plugins**, select **Daily Notes MCP**, and install `daily-notes-mcp` from the marketplace. The plugin is then available to Codex in the desktop app.
+In the ChatGPT desktop app, open **Plugins**, select **Daily Obsidian**, and install `daily-obsidian` from the marketplace. The plugin is then available to Codex in the desktop app.
 
 For Codex CLI or IDE users who only need the MCP server, add the deployed endpoint to `~/.codex/config.toml`:
 
 ```toml
-[mcp_servers.daily-notes]
+[mcp_servers.daily-obsidian]
 url = "https://dailynotesmcp.vercel.app/mcp"
 ```
 
