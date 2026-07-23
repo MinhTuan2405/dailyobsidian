@@ -186,6 +186,21 @@ async function verifyPackages() {
   );
   const vercel = await json("vercel.json");
   check(
+    vercel.framework === null &&
+      vercel.buildCommand === null &&
+      vercel.outputDirectory === "public",
+    "Vercel must skip root frontend detection and deploy only the Python API",
+  );
+  check(
+    (await text("public/robots.txt")) === "User-agent: *\nDisallow: /\n",
+    "Vercel public output must contain only the expected crawler policy",
+  );
+  check(
+    JSON.stringify(await readdir(path.join(ROOT, "public"))) ===
+      JSON.stringify(["robots.txt"]),
+    "Vercel public output must not expose additional static files",
+  );
+  check(
     vercel.rewrites?.[0]?.destination === "/api/index.py",
     "Vercel must continue to deploy the preserved Python prototype",
   );

@@ -38,3 +38,17 @@ def test_marketplaces_expose_the_plugin_from_the_repository_root() -> None:
     assert claude_plugin["name"] == codex_plugin["name"] == "daily-obsidian"
     assert claude_plugin["source"] == "./"
     assert codex_plugin["source"] == {"source": "local", "path": "./"}
+
+
+def test_vercel_deploys_only_the_python_api() -> None:
+    config = _read_json("vercel.json")
+
+    assert config["framework"] is None
+    assert config["buildCommand"] is None
+    assert config["outputDirectory"] == "public"
+    assert (ROOT / "public" / "robots.txt").read_text(encoding="utf-8") == (
+        "User-agent: *\nDisallow: /\n"
+    )
+    assert config["rewrites"] == [
+        {"source": "/(.*)", "destination": "/api/index.py"}
+    ]

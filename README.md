@@ -221,7 +221,7 @@ Or use the packaged STDIO entry point:
 uv run dailynotesmcp-stdio
 ```
 
-Vercel continues to deploy only this stateless Python prototype through `api/index.py`. Do not describe that public endpoint as an Obsidian Workbench remote bridge.
+Vercel continues to deploy only this stateless Python prototype through `api/index.py`. `vercel.json` disables framework and root build-command detection, and constrains static output to the minimal `public/` directory, so the TypeScript workspace does not become a frontend deployment or static source tree. Do not describe that public endpoint as an Obsidian Workbench remote bridge.
 
 ## Release
 
